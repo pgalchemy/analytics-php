@@ -83,6 +83,13 @@ abstract class Segment_Consumer {
     return isset($this->options["ssl"]) ? $this->options["ssl"] : true;
   }
 
+  protected function host() {
+    return isset($this->options["host"]) ? $this->options["host"] : "api.segment.io";
+  }
+
+  protected function path() {
+    return isset($this->options["path"]) ? $this->options["path"] : "/v1/import";
+  }
 
   /**
    * On an error, try and call the error handler, if debugging output to

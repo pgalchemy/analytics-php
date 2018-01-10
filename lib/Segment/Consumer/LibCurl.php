@@ -35,8 +35,8 @@ class Segment_Consumer_LibCurl extends Segment_QueueConsumer {
     $secret = $this->secret;
 
     $protocol = $this->ssl() ? "https://" : "http://";
-    $host = "api.segment.io";
-    $path = "/v1/import";
+    $host = $this->host();
+    $path = $this->path();
     $url = $protocol . $host . $path;
 
     // open connection
